@@ -1,14 +1,14 @@
-from distutils.core import setup
-
+from setuptools import setup
 setup(
-  name = 'dotbrain_test_module',
-  packages = ['dotbrain_test_module'],
+  name = 'dotbrain_module',
+  packages = ['dotbrain_module'],
   version = '0.1',
-  description = 'Test PyPy',
-  author = 'DotBrain developers',
-  author_email = 'lucho@diegonaranjo.co',
-  url = 'https://gitlab.com/luisda199824/dotbrain_test_module.git', # use the URL to the github repo
-  download_url = 'https://gitlab.com/luisda199824/dotbrain_test_module.git/archive/0.1.tar.gz', # I'll explain this in a second
-  keywords = ['testing', 'logging', 'example'], # arbitrary keywords
+  description = 'Test for pip - Pypi',
+  author = 'Luis David Ocampo Aguirre',
+  author_email = 'luisda199824@gmail.com',
+  url = 'https://github.com/luisda199824/dotbrain_module',
+  download_url = 'https://github.com/luisda199824/dotbrain_module/archive/0.1.tar.gz',
+  keywords = ['testing', 'dotbrain', 'private'],
   classifiers = [],
+  py_modules = ['requests'],
 )

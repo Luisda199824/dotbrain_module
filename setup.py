@@ -2,7 +2,7 @@ from setuptools import setup
 setup(
   name = 'dotbrain_module',
   packages = ['dotbrain_module'],
-  version = '0.1',
+  version = '0.2',
   description = 'Test for pip - Pypi',
   author = 'Luis David Ocampo Aguirre',
   author_email = 'luisda199824@gmail.com',

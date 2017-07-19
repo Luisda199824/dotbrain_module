@@ -1,1 +1,1 @@
-from .test import sendAnswerd
+from .functions import *

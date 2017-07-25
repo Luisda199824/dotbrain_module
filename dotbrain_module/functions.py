@@ -15,9 +15,10 @@ def sendAnswerd(api_key=None,api_key_secret=None,token=None,value=None,base=None
     }
 
     r = requests.post(url=url, params=data)
+    import json
     data = {
         'validate': True,
-        'text': r.text,
+        'text': json.loads(r.text),
         'status_code': r.status_code
     }
     if r.status_code != 200:
@@ -42,9 +43,10 @@ def getServiceBasicInfo(api_key=None,api_key_secret=None,token=None, printInfo=F
     }
 
     r = requests.get(url=url, params=data)
+    import json
     data = {
         'validate': True,
-        'text': r.text,
+        'text': json.loads(r.text),
         'status_code': r.status_code
     }
     if r.status_code != 200:
@@ -74,6 +76,40 @@ def setQuestionKey(api_key=None,api_key_secret=None,token=None, key=None, weigth
     data = {
         'validate': True,
         'text': r.text,
+        'status_code': r.status_code
+    }
+    if r.status_code != 200:
+        if printInfo:
+            print('Error: %s' % str(r.text))
+        return data
+    else:
+        if printInfo:
+            print('All ok')
+        return data
+
+def create_conference(api_key=None,api_key_secret=None,name=None, email=None, normal_mean=True, printInfo=False):
+    import requests
+
+    url = 'http://dev.dotbrain.co/api/create/service/'
+
+    if normal_mean:
+        normal_mean = '1'
+    else:
+        normal_mean = '0'
+
+    data = {
+        'api_key': api_key,
+        'api_key_secret': api_key_secret,
+        'name': name,
+        'email': email,
+        'normal_mean': normal_mean,
+    }
+
+    r = requests.post(url=url, params=data)
+    import json
+    data = {
+        'validate': True,
+        'text': json.loads(r.text),
         'status_code': r.status_code
     }
     if r.status_code != 200:
